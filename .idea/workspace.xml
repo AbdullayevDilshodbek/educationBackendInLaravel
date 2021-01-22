@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="" />
+    <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shoping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shoping.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +31,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -121,9 +143,33 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
     </include_path>
   </component>
   <component name="ProjectId" id="1le0LgGBLwcatcDLygUgF3iAXqT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -131,10 +177,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/vue/education" />
+    <property name="last_opened_file_path" value="C:/vue/ideal" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -155,7 +203,49 @@
       <workItem from="1607942195798" duration="943000" />
       <workItem from="1607943275065" duration="4141000" />
       <workItem from="1608006204553" duration="3199000" />
-      <workItem from="1608018140964" duration="4977000" />
+      <workItem from="1608018140964" duration="8303000" />
+      <workItem from="1608050386543" duration="3502000" />
+      <workItem from="1608144448395" duration="1076000" />
+      <workItem from="1608302917310" duration="1312000" />
+      <workItem from="1608308971776" duration="2591000" />
+      <workItem from="1608350477362" duration="225000" />
+      <workItem from="1608445155294" duration="17223000" />
+      <workItem from="1608522283267" duration="2660000" />
+      <workItem from="1608546415570" duration="692000" />
+      <workItem from="1608549786379" duration="213000" />
+      <workItem from="1608550613832" duration="241000" />
+      <workItem from="1608555622180" duration="2516000" />
+      <workItem from="1608626992637" duration="635000" />
+      <workItem from="1608634187403" duration="297000" />
+      <workItem from="1608636730193" duration="1165000" />
+      <workItem from="1608658112684" duration="2717000" />
+      <workItem from="1608740890628" duration="4373000" />
+      <workItem from="1609768265625" duration="439000" />
+      <workItem from="1609769248385" duration="6362000" />
+      <workItem from="1609818597162" duration="1625000" />
+      <workItem from="1609820256682" duration="1587000" />
+      <workItem from="1609825649563" duration="2982000" />
+      <workItem from="1609830684474" duration="4602000" />
+      <workItem from="1609946054895" duration="2730000" />
+      <workItem from="1609993665927" duration="9233000" />
+      <workItem from="1610080184793" duration="17431000" />
+      <workItem from="1610172471822" duration="4295000" />
+      <workItem from="1610217813657" duration="786000" />
+      <workItem from="1610219548241" duration="559000" />
+      <workItem from="1610257247953" duration="7491000" />
+      <workItem from="1610346139634" duration="14178000" />
+      <workItem from="1610512949988" duration="8117000" />
+      <workItem from="1610558378673" duration="2605000" />
+      <workItem from="1610601440824" duration="11738000" />
+      <workItem from="1610702016811" duration="2537000" />
+      <workItem from="1610947534693" duration="8707000" />
+      <workItem from="1610974180942" duration="2789000" />
+      <workItem from="1611031554963" duration="865000" />
+      <workItem from="1611038108372" duration="553000" />
+      <workItem from="1611045041582" duration="4202000" />
+      <workItem from="1611137591095" duration="9319000" />
+      <workItem from="1611202169427" duration="17695000" />
+      <workItem from="1611289575966" duration="6138000" />
     </task>
     <servers />
   </component>
@@ -163,13 +253,46 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608021332236">
+    <state x="552" y="198" key="#Notifications" timestamp="1608350582706">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="198" key="#Notifications/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608350582706" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611208794408">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608021332236" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1607962959311">
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611208794408" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608634381476" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1610024028341">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1607962959311" />
+    <state x="740" y="295" key="FileChooserDialogImpl/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1610024028341" />
+    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1608447749870">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="794" y="463" key="NewPhpFileDialog/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608447749870" />
+    <state x="461" y="182" key="SettingsEditor" timestamp="1610280837201">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="219" y="6" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1610280305096" />
+    <state x="461" y="182" key="SettingsEditor/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1610280837201" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1608483839472">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608483839472" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1611202168587">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611202168587" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608555621893" />
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611160444842">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611160444842" />
+    <state x="616" y="192" width="672" height="676" key="search.everywhere.popup" timestamp="1608743250084">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="616" y="192" width="672" height="676" key="search.everywhere.popup/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608743250084" />
   </component>
 </project>
