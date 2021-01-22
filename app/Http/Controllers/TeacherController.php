@@ -94,15 +94,14 @@ class TeacherController extends Controller
         return response()->json(['message' => 'Muvaffaqiyatli yangilandi'], 201);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return Response
-     */
     public function destroy($id)
     {
-        //
+        $teacher = Teacher::find($id);
+        if (is_null($teacher)) {
+            return response()->json(['message' => 'O\'qituvchi topilmadi'], 400);
+        }
+        $teacher->delete();
+        return response()->json(['message' => 'O\'qituvchi muvaffaqiyatli o\'chirildi'], 204);
     }
     public function getTeachersOfSubject(Request $request)
     {
