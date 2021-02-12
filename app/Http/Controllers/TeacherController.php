@@ -21,7 +21,7 @@ class TeacherController extends Controller
     public function index()
     {
         return TeacherResource::collection(Teacher::orderByDesc('id')
-            ->get());
+            ->paginate(env('PG')));
     }
 
     /**

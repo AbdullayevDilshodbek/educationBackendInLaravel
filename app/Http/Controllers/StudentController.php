@@ -61,15 +61,10 @@ class StudentController extends Controller
         return \response()->json(['message' => 'Student yaratildi'], 201);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return Response
-     */
+
     public function show($id)
     {
-        //
+        return StudentResource::collection(Student::where('id', $id)->get());
     }
 
     /**
@@ -134,16 +129,16 @@ class StudentController extends Controller
     public function getActiveStudents(Request $request)
     {
         $text = $request->text;
-        return StudentResource::collection(Student::orderByDesc('id')
-            ->where(function ($query) use ($text) {
-                $query->orWhere('first_name', 'like', '%' . $text . '%')
-                    ->orWhere('last_name', 'like', '%' . $text . '%')
-                    ->orWhere('middle_name', 'like', '%' . $text . '%');
-            })
-            ->where('status',true)
-            ->orderByDesc('id')
-//            ->skip(0)
-//            ->take(10)
-            ->get());
+        if (!$request->student_id)
+            return StudentResource::collection(Student::orderByDesc('id')
+                ->where(function ($query) use ($text) {
+                    $query->orWhere('first_name', 'like', '%' . $text . '%')
+                        ->orWhere('last_name', 'like', '%' . $text . '%')
+                        ->orWhere('middle_name', 'like', '%' . $text . '%');
+                })
+                ->where('status', true)
+                ->orderByDesc('id')
+                ->get());
+        return new StudentResource(Student::find($request->student_id));
     }
 }

@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GroupToStudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GroupToStudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TeacherResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TeacherResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -150,6 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1le0LgGBLwcatcDLygUgF3iAXqT" />
@@ -160,11 +172,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/vue/ideal" />
+    <property name="last_opened_file_path" value="D:/Laravel/bloguz" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -230,6 +243,27 @@
       <workItem from="1611137591095" duration="9319000" />
       <workItem from="1611202169427" duration="17695000" />
       <workItem from="1611289575966" duration="6508000" />
+      <workItem from="1611550641519" duration="5299000" />
+      <workItem from="1611593544569" duration="10000" />
+      <workItem from="1611635204154" duration="4408000" />
+      <workItem from="1611738235113" duration="141000" />
+      <workItem from="1611738582627" duration="693000" />
+      <workItem from="1611740382780" duration="1163000" />
+      <workItem from="1611751400824" duration="51000" />
+      <workItem from="1612006668346" duration="1112000" />
+      <workItem from="1612018011383" duration="441000" />
+      <workItem from="1612019576515" duration="5131000" />
+      <workItem from="1612077720760" duration="1275000" />
+      <workItem from="1612083484690" duration="2055000" />
+      <workItem from="1612158866302" duration="10071000" />
+      <workItem from="1612189339874" duration="2108000" />
+      <workItem from="1612423398420" duration="633000" />
+      <workItem from="1612803622663" duration="1281000" />
+      <workItem from="1612844610319" duration="4940000" />
+      <workItem from="1612890923041" duration="1117000" />
+      <workItem from="1612931833184" duration="1575000" />
+      <workItem from="1612950241198" duration="2046000" />
+      <workItem from="1613037390081" duration="1638000" />
     </task>
     <servers />
   </component>
@@ -241,17 +275,33 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#Notifications/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608350582706" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611208794408">
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612159221000">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608021332236" />
-    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611208794408" />
+    <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1612159221000" />
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608634381476" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1610024028341">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1612080361525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/1920.0.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1607962959311" />
-    <state x="740" y="295" key="FileChooserDialogImpl/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1610024028341" />
+    <state x="740" y="295" key="FileChooserDialogImpl/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1612080361525" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1611313173715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611313173715" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1611313173715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611313173715" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1611313173715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611313173715" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1611313173715">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1611313173715" />
     <state x="794" y="463" key="NewPhpFileDialog" timestamp="1608447749870">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -131,11 +131,11 @@ class GroupToStudentController extends Controller
         //
     }
 
-    public function getStudentOfGroup($group_id)
+    public function getStudentsOfGroup($group_id)
     {
         return GroupToStudentResource::collection(GroupToStudent::where('status', true)
             ->where('group_id', $group_id)
             ->orderByDesc('id')
-            ->paginate(3));
+            ->paginate(8));
     }
 }

@@ -26,7 +26,7 @@ class GroupController extends Controller
             ->Join('teachers','teachers.id','=','groups.teacher_id')
             ->Join('subjects','subjects.id','=','teachers.subject_id')
             ->select(['groups.*'])
-            ->paginate(3));
+            ->paginate(6));
     }
 
     /**
@@ -69,11 +69,11 @@ class GroupController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return Response
+     * @return GroupResource
      */
     public function show($id)
     {
-        //
+        return new GroupResource(Group::find($id));
     }
 
     /**
@@ -140,9 +140,7 @@ class GroupController extends Controller
             ->get(['id','group_name']);
     }
 
-    public function getGroupsOfStudent($group_id){
-//        doing...
-        $student_id = Group::find($group_id)->student_id;
+    public function getGroupsOfStudent($student_id){
         $groups_id = GroupToStudent::where('student_id',$student_id)->pluck('group_id');
         return Group::whereIn('id',$groups_id)
             ->orderByDesc('id')

@@ -122,4 +122,8 @@ class UserController extends Controller
         $message = $user->status ? 'Foydalanuvchi faollashtirildi' : 'Foydalanuvchi nofaollashtirildi';
         return response()->json(['message' => $message], 200);
     }
+//    hozircha ishlatilmagan
+    public function getActiveUser(){
+        return User::where('status',true)->get();
+    }
 }

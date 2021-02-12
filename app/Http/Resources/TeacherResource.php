@@ -23,7 +23,8 @@ class TeacherResource extends JsonResource
             'subject' => [
                 'id' => $this->subject->id,
                 'subject_name' => $this->subject->subject_name
-            ]
+            ],
+            'salary' => $this->salary($this->id)
         ];
     }
 }
