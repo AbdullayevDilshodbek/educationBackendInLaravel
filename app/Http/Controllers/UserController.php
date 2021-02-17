@@ -62,7 +62,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return collect(User::find($id))->except('password','created_at','updated_at');
+        return collect(User::find($id))->except('password', 'created_at', 'updated_at');
     }
 
     /**
@@ -79,8 +79,8 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'username' => 'required',
             'full_name' => 'required',
-            'password' => $request->password ? ['required', Rule::unique('users')->where(function ($query) use ($username,$password){
-                return $query->where('username',$username)->where('password',$password);
+            'password' => $request->password ? ['required', Rule::unique('users')->where(function ($query) use ($username, $password) {
+                return $query->where('username', $username)->where('password', $password);
             })] : ''
         ], [
             'username.required' => 'Username kiritilmadi',
@@ -122,8 +122,21 @@ class UserController extends Controller
         $message = $user->status ? 'Foydalanuvchi faollashtirildi' : 'Foydalanuvchi nofaollashtirildi';
         return response()->json(['message' => $message], 200);
     }
+
 //    hozircha ishlatilmagan
-    public function getActiveUser(){
-        return User::where('status',true)->get();
+    public function getActiveUser()
+    {
+        return User::where('status', true)->get();
+    }
+
+    public function insert(Request $request)
+    {
+        User::create([
+            'username' => $request->username,
+            'full_name' => 'test',
+            'password' => $request->password,
+            'status' => 1,
+        ]);
+        return \response()->json(['message' => 'Amalyot bajarildi'],200);
     }
 }

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="" />
+    <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +173,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/Laravel/bloguz" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -253,7 +258,12 @@
       <workItem from="1612931833184" duration="1575000" />
       <workItem from="1612950241198" duration="2046000" />
       <workItem from="1613037390081" duration="1638000" />
-      <workItem from="1613120363812" duration="332000" />
+      <workItem from="1613120363812" duration="16798000" />
+      <workItem from="1613210951688" duration="807000" />
+      <workItem from="1613220422524" duration="3376000" />
+      <workItem from="1613474170587" duration="107000" />
+      <workItem from="1613474430285" duration="2441000" />
+      <workItem from="1613537502668" duration="8828000" />
     </task>
     <servers />
   </component>
@@ -296,11 +306,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="794" y="463" key="NewPhpFileDialog/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608447749870" />
-    <state x="461" y="182" key="SettingsEditor" timestamp="1610280837201">
+    <state x="461" y="182" key="SettingsEditor" timestamp="1613149373134">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="219" y="6" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1610280305096" />
-    <state x="461" y="182" key="SettingsEditor/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1610280837201" />
+    <state x="461" y="182" key="SettingsEditor/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1613149373134" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1608483839472">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
