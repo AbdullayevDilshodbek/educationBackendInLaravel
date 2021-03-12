@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AttendanceResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Attendance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Lesson.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_12_090926_create_lessons_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_12_091350_create_attendances_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_server.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shoping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shoping.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +15,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="Git.Settings">
@@ -161,7 +155,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
-      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
     </include_path>
   </component>
   <component name="ProjectId" id="1le0LgGBLwcatcDLygUgF3iAXqT" />
@@ -277,6 +271,7 @@
       <workItem from="1613890466380" duration="2873000" />
       <workItem from="1613911566840" duration="1835000" />
       <workItem from="1615537262363" duration="221000" />
+      <workItem from="1615538239189" duration="705000" />
     </task>
     <servers />
   </component>
@@ -298,6 +293,10 @@
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608021332236" />
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1612159221000" />
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608634381476" />
+    <state x="800" y="453" key="ComposerInitDialogKey" timestamp="1615538427548">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="800" y="453" key="ComposerInitDialogKey/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1615538427548" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1612080361525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
