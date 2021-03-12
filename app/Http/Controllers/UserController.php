@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResource;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -20,10 +18,13 @@ class UserController extends Controller
      *
      * @return AnonymousResourceCollection
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->search ?? '';
+        $user_id = $request->user_id ?? 0;
         return UserResource::collection(User::orderByDesc('id')
-//            ->where('id',$request->user_id ? '=' : '>',$request->user_id ? $request->user_id : 0)
+            ->where('full_name','like','%'.$search.'%')
+            ->where('id',$user_id ? '=' : '>',$user_id ?? 0)
             ->paginate(10));
     }
 
@@ -131,6 +132,14 @@ class UserController extends Controller
 
     public function insert(Request $request)
     {
+        $validator = Validator::make($request->all(),[
+            'username' => 'required'
+        ],[
+            'username.required' => 'username yoq'
+        ]);
+        if ($validator->fails())
+            return 'yahoo';
+        return $request->username;
         User::create([
             'username' => $request->username,
             'full_name' => 'test',

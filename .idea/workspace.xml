@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ce0d891-e3ae-401f-8629-5d360c08997b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AttendanceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AttendanceResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Attendance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Lesson.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_12_090926_create_lessons_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_12_091350_create_attendances_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_server.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,6 +270,13 @@
       <workItem from="1613474170587" duration="107000" />
       <workItem from="1613474430285" duration="2441000" />
       <workItem from="1613537502668" duration="8828000" />
+      <workItem from="1613567216638" duration="2734000" />
+      <workItem from="1613653241334" duration="25000" />
+      <workItem from="1613653293583" duration="690000" />
+      <workItem from="1613842031914" duration="47000" />
+      <workItem from="1613890466380" duration="2873000" />
+      <workItem from="1613911566840" duration="1835000" />
+      <workItem from="1615537262363" duration="221000" />
     </task>
     <servers />
   </component>
@@ -275,6 +288,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="552" y="198" key="#Notifications/1920.8.1536.864/0.0.1920.1080@0.0.1920.1080" timestamp="1608350582706" />
+    <state x="725" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615537479953">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="725" y="343" key="#com.intellij.fileTypes.FileTypeChooser/1920.8.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1615537479953" />
     <state x="690" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612159221000">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
