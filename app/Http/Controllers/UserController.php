@@ -23,7 +23,11 @@ class UserController extends Controller
         $search = $request->search ?? '';
         $user_id = $request->user_id ?? 0;
         return UserResource::collection(User::orderByDesc('id')
-            ->where('full_name','like','%'.$search.'%')
+            ->where(function ($query) use ($search){
+                $query->where('full_name','like','%'.$search.'%')
+                    ->orWhere('username','like','%'.$search.'%')
+                    ->orWhere('id','like','%'.$search.'%');
+            })
             ->where('id',$user_id ? '=' : '>',$user_id ?? 0)
             ->paginate(10));
     }

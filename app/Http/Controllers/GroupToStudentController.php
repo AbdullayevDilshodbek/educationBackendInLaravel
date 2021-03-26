@@ -52,7 +52,7 @@ class GroupToStudentController extends Controller
         if ($validator->fails())
             return response()->json(['message' => $validator->getMessageBag()], 400);
         GroupToStudent::create([
-            'student_id' => $request->student_id,
+            'student_id' => $request->student_id['id'],
             'group_id' => $request->group_id,
             'discount' => $request->discount,
             'credit' => ((100 - $request->discount) / 100) * Group::find($request->group_id)->payment * $request->pay_part / 100,

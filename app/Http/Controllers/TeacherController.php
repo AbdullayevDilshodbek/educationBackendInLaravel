@@ -18,9 +18,17 @@ class TeacherController extends Controller
      *
      * @return AnonymousResourceCollection
      */
-    public function index()
+    public function index(Request $request)
     {
-        return TeacherResource::collection(Teacher::orderByDesc('id')
+        $search = $request->search ?? '';
+        return TeacherResource::collection(Teacher::Join('users','users.id','=','teachers.user_id')
+            ->Join('subjects','subjects.id','=','teachers.subject_id')
+            ->where(function ($query) use ($search){
+                $query->orWhere('subjects.subject_name','like','%'.$search.'%')
+                    ->orWhere('users.full_name','like','%'.$search.'%');
+            })
+            ->orderByDesc('id')
+            ->select('teachers.*')
             ->paginate(env('PG')));
     }
 

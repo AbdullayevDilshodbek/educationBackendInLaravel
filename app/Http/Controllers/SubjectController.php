@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\StudentResource;
+use App\Http\Resources\SubjectResourse;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -14,11 +16,12 @@ class SubjectController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return AnonymousResourceCollection
      */
     public function index()
     {
-        return Subject::orderByDesc('id')->get();
+        return SubjectResourse::collection(Subject::orderByDesc('id')
+            ->paginate(env('PG')));
     }
 
     /**

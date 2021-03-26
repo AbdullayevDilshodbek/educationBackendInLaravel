@@ -20,8 +20,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return StudentResource::collection(Student::orderByDesc('id')->get());
-//        return Student::paginate(env('PG'));
+        return StudentResource::collection(Student::orderByDesc('id')->paginate(env('PG')));
     }
 
     /**
@@ -128,14 +127,15 @@ class StudentController extends Controller
 
     public function getActiveStudents(Request $request)
     {
-        $text = $request->text;
+        $text = $request->text ?? '';
         if (!$request->student_id)
-            return StudentResource::collection(Student::orderByDesc('id')
-                ->where(function ($query) use ($text) {
-                    $query->orWhere('first_name', 'like', '%' . $text . '%')
-                        ->orWhere('last_name', 'like', '%' . $text . '%')
-                        ->orWhere('middle_name', 'like', '%' . $text . '%');
-                })
+            return StudentResource::collection(Student::where(function ($query) use ($text) {
+                $query->orWhere('first_name', 'like', '%' . $text . '%')
+                    ->orWhere('last_name', 'like', '%' . $text . '%')
+                    ->orWhere('middle_name', 'like', '%' . $text . '%');
+            })
+                ->skip(0)
+                ->take(10)
                 ->where('status', true)
                 ->orderByDesc('id')
                 ->get());
