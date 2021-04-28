@@ -33,6 +33,11 @@ class SubjectSeeder extends Seeder
                 ],
                 [
                     'subject_name' => 'Bialogiya'
+                ],
+                [
+                    'google' => 'Bialogiya',
+                    'samo' => 'Bialogiya2',
+                    'xamo' => 'Bialogiya2',
                 ]
             ]);
     }
