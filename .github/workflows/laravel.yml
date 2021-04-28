@@ -10,7 +10,7 @@ jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-    
+
     services:
       # mysql-service Label used to access the service container
       mysql-service:
@@ -52,6 +52,7 @@ jobs:
         DB_CONNECTION: mysql
         DB_DATABASE: db_test
         DB_PORT: 3306
+        DB_HOST: 127.0.0.1
         DB_USER: root
         DB_PASSWORD: root
       run: |
