@@ -52,5 +52,5 @@ jobs:
         DB_USER: root
         DB_PASSWORD: root
       run: |
-        php artisan migrate
+        php artisan migrate:fresh
         run: vendor/bin/phpunit
