@@ -57,4 +57,4 @@ jobs:
         DB_PASSWORD: root
       run: |
         php artisan migrate ---seed
-        vendor/phpunit/phpunit/phpunit
+        run: vendor/bin/phpunit
