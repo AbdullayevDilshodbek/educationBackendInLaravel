@@ -28,8 +28,7 @@ jobs:
         fetch-depth: 1
     - name: Install composer dependencies
       run: |
-        composer install --no-scripts
-        composer update
+        composer update --no-scripts
 
     - name: Prepare Laravel Application
       run: |
