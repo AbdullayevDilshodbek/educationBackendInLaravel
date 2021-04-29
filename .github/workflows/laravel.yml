@@ -26,8 +26,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 1
-    - name: Install Dependencies
-      run: composer install --no-scripts
+    - name: Install composer dependencies
+      run: |
+        composer install --no-scripts
+        composer update
 
     - name: Prepare Laravel Application
       run: |
