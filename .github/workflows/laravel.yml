@@ -36,7 +36,9 @@ jobs:
         php artisan key:generate
     - name: Migrate
       run: php artisan migrate
+    - name: Seed
+      run: php artisan db:seed
     - name: Run Testsuite
       run: |
-        php artisan db:seed
+        php artisan migrate:refresh
         vendor/bin/phpunit tests/
