@@ -35,7 +35,7 @@ jobs:
         cp .env.ci .env
         php artisan key:generate
     - name: Migrate
-      run: php artisan migrate
+      run: php artisan migrate --seed
     - name: Seed
       run: php artisan db:seed
     - name: Run Testsuite
