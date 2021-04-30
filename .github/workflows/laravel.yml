@@ -32,7 +32,7 @@ jobs:
 
     - name: Prepare Laravel Application
       run: |
-        cp .env.ci .env
+        php -r "file_exists('.env') || copy('.env.ci', '.env');"
         php artisan key:generate
     - name: Migrate
       run: php artisan migrate
