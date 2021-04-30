@@ -38,6 +38,10 @@ jobs:
       run: php artisan migrate
     - name: Seed
       run: php artisan db:seed
+    - name: PHP optimize
+      run: php artisan optimize
+    - name: Route list
+      run: php artisan route:list
     - name: Run Testsuite
       run: |
         php artisan migrate:refresh
