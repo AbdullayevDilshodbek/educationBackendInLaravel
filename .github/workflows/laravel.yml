@@ -45,6 +45,4 @@ jobs:
     - name: PHP optimize
       run: php artisan optimize
     - name: Run Testsuite
-      run: |
-        php artisan migrate:refresh
-        vendor/bin/phpunit tests/
+      run: vendor/bin/phpunit tests/
