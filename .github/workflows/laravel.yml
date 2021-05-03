@@ -29,7 +29,6 @@ jobs:
     - name: Install composer dependencies
       run: |
         composer update --no-scripts
-
     - name: Prepare Laravel Application
       run: |
         php -r "file_exists('.env') || copy('.env.ci', '.env');"
