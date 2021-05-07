@@ -36,6 +36,11 @@ class SubjectSeeder extends Seeder
                 ],
                 [
                     'subject_name' => 'Tarix'
+                ],
+                [
+                    'subject_nsadfame' => 'Tarasdix',
+                    'subjecasdast_name' => 'Tarasdix',
+                    'subjecasdast_name' => 'asd',
                 ]
             ]);
     }
