@@ -2,154 +2,74 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\UserResource;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
+use App\Repositories\User\UserInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
-//test
-class UserController extends Controller
+class UserController extends Controller implements UserInterface
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return AnonymousResourceCollection
-     */
-    public function index(Request $request)
+    private UserInterface $userRepository;
+    public function __construct(UserInterface $userRepository)
     {
-        $search = $request->search ?? '';
-        $user_id = $request->user_id ?? 0;
-        return UserResource::collection(User::orderByDesc('id')
-            ->where(function ($query) use ($search){
-                $query->where('full_name','like','%'.$search.'%')
-                    ->orWhere('username','like','%'.$search.'%')
-                    ->orWhere('id','like','%'.$search.'%');
-            })
-            ->where('id',$user_id ? '=' : '>',$user_id ?? 0)
-            ->paginate(10));
+        $this->userRepository = $userRepository;
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return JsonResponse
+     * Foydalanuvchilarni olish
+     * @authenticated
+     * @queryParam search string
      */
-    public function store(Request $request)
+    public function index()
     {
-        $validator = Validator::make($request->all(), [
-            'username' => 'required',
-            'full_name' => 'required',
-            'password' => 'required'
-        ], [
-            'username.required' => 'Username kiritilmadi',
-            'full_name.required' => 'Full name kiritilmadi',
-            'password.required' => 'password kiritilmadi',
-        ]);
-        if ($validator->fails())
-            return response()->json(['message' => $validator->getMessageBag()], 400);
-        User::create([
-            'username' => $request->username,
-            'full_name' => $request->full_name,
-            'password' => bcrypt($request->password),
-        ]);
-        return response()->json(['message' => 'Foydalanuvchi yaratildi'], 201);
+        return $this->userRepository->index();
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Support\Collection
+     * Foydalanuvchi yaratish
+     * @authenticated
      */
-    public function show($id)
+    public function store(UserRequest $request)
     {
-        return collect(User::find($id))->except('password', 'created_at', 'updated_at');
+        return $this->userRepository->store($request);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param int $id
-     * @return JsonResponse
+     * Tanlangan foydalanuvchini olish
+     * @authenticated
      */
-    public function update(Request $request, $id)
+    public function show(User $user)
     {
-        $username = $request->username;
-        $password = bcrypt($request->password);
-        $validator = Validator::make($request->all(), [
-            'username' => 'required',
-            'full_name' => 'required',
-            'password' => $request->password ? ['required', Rule::unique('users')->where(function ($query) use ($username, $password) {
-                return $query->where('username', $username)->where('password', $password);
-            })] : ''
-        ], [
-            'username.required' => 'Username kiritilmadi',
-            'full_name.required' => 'Full name kiritilmadi',
-            'password.required' => 'password kiritilmadi',
-            'password.unique' => 'Belgilardan foydalaning',
-        ]);
-        if ($validator->fails())
-            return response()->json(['message' => $validator->getMessageBag()], 400);
-        $user = User::find($id);
-        $request->password ? $user->update([
-            'username' => $request->username,
-            'full_name' => $request->full_name,
-            'password' => bcrypt($request->password),
-        ]) : $user->update([
-            'username' => $request->username,
-            'full_name' => $request->full_name,
-        ]);
-        return response()->json(['message' => 'Foydalanuvchi ma\'limotlari yangilandi'], 200);
+        return $this->userRepository->show($user);
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return Response
+     * Foydalanuvchi ma'lumotlarini o'zgartirish
+     * @bodyParam username string required
+     * @bodyParam full_name string required
      */
-    public function destroy($id)
+    public function update(Request $request, User $user)
     {
-        //
+        return $this->userRepository->update($request, $user);
     }
 
-    public function changeStatus($user_id)
+    /**
+     * Foydalanuvchi status ni o'zgartirish
+     * @authenticated
+     */
+    public function changeStatus(User $user)
     {
-        $user = User::find($user_id);
-        $user->update([
-            'status' => !$user->status
-        ]);
-        $message = $user->status ? 'Foydalanuvchi faollashtirildi' : 'Foydalanuvchi nofaollashtirildi';
-        return response()->json(['message' => $message], 200);
+        return $this->userRepository->changeStatus($user);
     }
 
-//    hozircha ishlatilmagan
-    public function getActiveUser()
+    /**
+     * Faol bo'lgan foydalanuvchilarni barchasini olish
+     * @authenticated
+     */
+    public function getActiveUsers()
     {
-        return User::where('status', true)->get();
-    }
-
-    public function insert(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-            'username' => 'required'
-        ],[
-            'username.required' => 'username yoq'
-        ]);
-        if ($validator->fails())
-            return 'yahoo';
-        return $request->username;
-        User::create([
-            'username' => $request->username,
-            'full_name' => 'test',
-            'password' => $request->password,
-            'status' => 1,
-        ]);
-        return \response()->json(['message' => 'Amalyot bajarildi'],200);
+        return $this->userRepository->getActiveUsers();
     }
 }
