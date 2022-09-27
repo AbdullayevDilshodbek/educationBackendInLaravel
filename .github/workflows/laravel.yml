@@ -40,9 +40,9 @@ jobs:
       run: php artisan db:seed
     - name: Passport install
       run: php artisan passport:install
-    - name: Route list
-      run: php artisan route:list
     - name: PHP optimize
       run: php artisan optimize
+    - name: Route list
+      run: php artisan route:list
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/
