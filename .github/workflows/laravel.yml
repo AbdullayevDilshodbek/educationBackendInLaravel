@@ -40,6 +40,8 @@ jobs:
       run: php artisan db:seed
     - name: Passport install
       run: php artisan passport:install
+    - name: Composer reload
+      run: composer dump-autoload
     - name: PHP optimize
       run: php artisan optimize
     - name: Route list
