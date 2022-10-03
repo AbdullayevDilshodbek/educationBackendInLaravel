@@ -10,7 +10,7 @@ class AttendanceResource extends JsonResource
 
     public function toArray($request)
     {
-       $historyAttendance = $this->getAttendaceOfThreeDays();
+       $historyAttendance = $this->getAttendanceOfThreeDays();
         return [
             'id' => $this->student_id,
             'student' => [
@@ -27,7 +27,7 @@ class AttendanceResource extends JsonResource
         ];
     }
 
-    public function getAttendaceOfThreeDays()
+    public function getAttendanceOfThreeDays()
     {
         return Attendance::Join('lessons', 'lessons.id','=', 'attendances.lesson_id')
             ->where('student_id', $this->student_id)

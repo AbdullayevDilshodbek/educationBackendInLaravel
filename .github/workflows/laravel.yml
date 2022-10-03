@@ -44,7 +44,7 @@ jobs:
       run: composer dump-autoload
     - name: PHP optimize
       run: php artisan optimize
-    - name: Route list
-      run: php artisan route:list
+    # - name: Route list
+    #   run: php artisan route:list
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/

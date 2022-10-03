@@ -6,23 +6,31 @@ use App\Http\Resources\AttendanceResource;
 use App\Models\Attendance;
 use App\Models\Group;
 use App\Models\Lesson;
+use App\Repositories\Attendance\AttendanceInterface;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
-class AttendanceController extends Controller
+class AttendanceController extends Controller implements AttendanceInterface
 {
 
-    public function index(Request $request)
+    private AttendanceInterface $attendanceRepository;
+
+    public function __construct(AttendanceInterface $attendanceRepository)
     {
-        return AttendanceResource::collection(Group::where('groups.id', $request->group_id)
-            ->Join('group_to_students as gs', 'gs.group_id', '=', 'groups.id')
-            ->Join('students as s', 's.id', '=', 'gs.student_id')
-            ->groupBy('gs.student_id')
-            ->orderByDesc('gs.student_id')
-            ->select(['groups.id', 'gs.student_id', 'groups.group_name', 's.first_name', 's.last_name'])
-            ->get());
+        $this->attendanceRepository = $attendanceRepository;
+    }
+
+    public function index()
+    {
+        return $this->attendanceRepository->index();
+        // return AttendanceResource::collection(Group::where('groups.id', request('group_id'))
+        //     ->Join('group_to_students as gs', 'gs.group_id', '=', 'groups.id')
+        //     ->Join('students as s', 's.id', '=', 'gs.student_id')
+        //     ->groupBy('gs.student_id')
+        //     ->orderByDesc('gs.student_id')
+        //     ->select(['groups.id', 'gs.student_id', 'groups.group_name', 's.first_name', 's.last_name'])
+        //     ->get());
     }
 
     /**
@@ -38,7 +46,7 @@ class AttendanceController extends Controller
             ->where('group_id', $request->group_id)
             ->first();
         $lesson = null;
-        \DB::beginTransaction();
+        DB::beginTransaction();
         try {
             if (!$check) {
                 $lesson = Lesson::create([
@@ -82,46 +90,11 @@ class AttendanceController extends Controller
                 }
             }
             $message = $check ? 'Davomad yangilandi' : 'Davomad yaratildi';
-            \DB::commit();
+            DB::commit();
             return response()->json(['message' => $message], 200);
         } catch (\Exception $exception) {
-            \DB::rollBack();
+            DB::rollBack();
             return response()->json(['message' => 'Xatolik yuz berdi, qayta urinib ko\'ring'], 400);
         }
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
