@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07eb4f908f9ef0217790f541dac57a79",
+    "content-hash": "13735634b590df6cbbb7c98c944aac59",
     "packages": [
         {
             "name": "brick/math",
@@ -6294,6 +6294,46 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.5"
             },
             "time": "2022-09-12T13:28:28+00:00"
+        },
+        {
+            "name": "usmonaliyev/repository-pattern",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Temur5319436/repository-pattern.git",
+                "reference": "d3f045932a19d909fe233e445426eb304a2765de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Temur5319436/repository-pattern/zipball/d3f045932a19d909fe233e445426eb304a2765de",
+                "reference": "d3f045932a19d909fe233e445426eb304a2765de",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Usmonaliyev\\RepositoryPattern\\RepositoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Usmonaliyev\\RepositoryPattern\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Temur5319436",
+                    "email": "temur5319436@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/Temur5319436/repository-pattern/issues",
+                "source": "https://github.com/Temur5319436/repository-pattern/tree/1.0.0"
+            },
+            "time": "2022-09-28T11:44:45+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

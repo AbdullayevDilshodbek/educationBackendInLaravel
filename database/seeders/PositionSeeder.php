@@ -17,6 +17,7 @@ class PositionSeeder extends Seeder
     {
         Position::create([
             'title' => 'admin',
+            'organization_id' => 1,
             'active' => true
         ]);
     }

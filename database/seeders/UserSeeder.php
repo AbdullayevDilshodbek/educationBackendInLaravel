@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'full_name' => 'Test User',
             'username' => 'admin23',
             'password' => bcrypt('admin23'),
-            'organization_id' => 1
+            'position_id' => 1
         ]);
     }
 }

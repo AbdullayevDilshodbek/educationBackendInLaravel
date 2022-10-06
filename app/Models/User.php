@@ -22,7 +22,6 @@ class User extends Authenticatable
         'username',
         'password',
         'position_id',
-        'organization_id',
         'active'
     ];
 

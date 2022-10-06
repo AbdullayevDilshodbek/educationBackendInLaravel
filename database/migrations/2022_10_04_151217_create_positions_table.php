@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('positions', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
+            $table->foreignId('organization_id')->constrained();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });

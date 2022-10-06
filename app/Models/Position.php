@@ -11,6 +11,7 @@ class Position extends Model
 
     protected $fillable = [
         'title',
+        'organization_id',
         'active'
     ];
 }
