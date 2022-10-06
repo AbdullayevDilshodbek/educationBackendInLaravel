@@ -16,5 +16,5 @@ use App\Http\Controllers\api\v1\OrganizationController;
 
 Route::middleware('auth:api')->group(function(){
     Route::apiResource('organizations', OrganizationController::class);
-    Route::put('organization', [OrganizationController::class, 'changeActive']);
+    Route::put('organization/change_active/{id}', [OrganizationController::class, 'changeActive']);
 });

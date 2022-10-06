@@ -10,5 +10,5 @@ interface OrganizationInterface
     public function index();
     public function store(OrganizationRequest $request);
     public function update(OrganizationRequest $request, Organization $organization);
-    public function changeActive(Organization $organization);
+    public function changeActive(int $id);
 }

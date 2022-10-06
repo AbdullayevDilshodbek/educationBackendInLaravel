@@ -49,8 +49,8 @@ class OrganizationController extends Controller implements OrganizationInterface
      * Tashkilot active ligini o'zgartirish
      * @param  int  $id
      */
-    public function changeActive(Organization $organization)
+    public function changeActive(int $id)
     {
-        return $this->organizationRepository->changeActive($organization);
+        return $this->organizationRepository->changeActive($id);
     }
 }

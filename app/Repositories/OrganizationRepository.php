@@ -40,8 +40,9 @@ class OrganizationRepository implements OrganizationInterface
         return response()->json(['message' => env('MESSAGE_SUCCESS')],200);
     }
 
-    public function changeActive(Organization $organization)
+    public function changeActive(int $id)
     {
+        $organization = $this->organization::find($id);
         $organization->active = !$organization->active;
         $organization->save();
         return response()->json(['message' => env('MESSAGE_SUCCESS')],200);
