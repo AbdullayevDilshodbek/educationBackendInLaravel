@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interfaces\UserInterface;
+use App\Repositories\UserRepository;
 use App\Interfaces\PositionInterface;
 use App\Repositories\PositionRepository;
 use App\Interfaces\OrganizationInterface;
@@ -27,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app->singleton(UserInterface::class, UserRepository::class);
         $this->app->singleton(PositionInterface::class, PositionRepository::class);
         $this->app->singleton(OrganizationInterface::class, OrganizationRepository::class);
     }

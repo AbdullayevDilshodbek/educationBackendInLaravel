@@ -14,4 +14,9 @@ class Position extends Model
         'organization_id',
         'active'
     ];
+
+    public function organization()
+    {
+        return $this->hasOne(Organization::class, 'id', 'organization_id');
+    }
 }

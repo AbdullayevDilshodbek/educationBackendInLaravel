@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->where('username', $username)->first();
     }
+
+    public function position()
+    {
+        return $this->hasOne(Position::class, 'id', 'position_id');
+    }
 }
