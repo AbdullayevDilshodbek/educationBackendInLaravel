@@ -11,4 +11,5 @@ interface OrganizationInterface
     public function store(OrganizationRequest $request);
     public function update(OrganizationRequest $request, Organization $organization);
     public function changeActive(int $id);
+    public function getAllForAutoComplete();
 }

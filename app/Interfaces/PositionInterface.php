@@ -10,4 +10,5 @@ interface PositionInterface
     public function store(PositionRequest $request);
     public function update(PositionRequest $request, int $id);
     public function changeActive(int $id);
+    public function getAllForAutoComplete();
 }

@@ -49,4 +49,10 @@ class PositionRepository implements PositionInterface
         ]);
         return response()->json(['message' => env('MESSAGE_SUCCESS')],200);
     }
+
+    public function getAllForAutoComplete()
+    {
+        return $this->position::where('organization_id', $this->auth::user()->organization_id)
+            ->get();
+    }
 }

@@ -47,4 +47,13 @@ class OrganizationRepository implements OrganizationInterface
         $organization->save();
         return response()->json(['message' => env('MESSAGE_SUCCESS')],200);
     }
+
+    public function getAllForAutoComplete()
+    {
+        $auth = $this->auth::user();
+        return $this->organization::with(['parent'])
+            ->orWhere('id', $auth->organization_id)
+            ->orWhere('parent_id', $auth->organization_id)
+            ->get();
+    }
 }

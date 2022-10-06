@@ -12,7 +12,8 @@ class OrganizationController extends Controller implements OrganizationInterface
 {
 
     public function __construct(private OrganizationInterface $organizationRepository)
-    {}
+    {
+    }
 
     /**
      * Tashkilotlarni paginate bilan olib chiqish
@@ -52,5 +53,14 @@ class OrganizationController extends Controller implements OrganizationInterface
     public function changeActive(int $id)
     {
         return $this->organizationRepository->changeActive($id);
+    }
+
+    /**
+     * AutoComplete u-n barcha Tashkilotlarni olish
+     * @authenticated
+     */
+    public function getAllForAutoComplete()
+    {
+        return $this->organizationRepository->getAllForAutoComplete();
     }
 }

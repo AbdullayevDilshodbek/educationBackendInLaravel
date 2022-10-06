@@ -54,4 +54,13 @@ class PositionController extends Controller implements PositionInterface
     {
         return $this->positionRepository->changeActive($id);
     }
+
+    /**
+     * AutoComplete u-n barcha lavozimlarni olish
+     * @authenticated
+     */
+    public function getAllForAutoComplete()
+    {
+        return $this->positionRepository->getAllForAutoComplete();
+    }
 }
