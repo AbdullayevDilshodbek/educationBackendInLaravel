@@ -2,18 +2,20 @@
 
 namespace App\Repositories;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
 use App\Http\Resources\UserResource;
 use App\Interfaces\UserInterface;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
 class UserRepository implements UserInterface
 {
-    public function __construct(private User $user, private Auth $auth)
+    public function __construct(private User $user, private Auth $auth, private Hash $hash)
     {
     }
 
@@ -77,5 +79,24 @@ class UserRepository implements UserInterface
             'active' => !$user->active
         ]);
         return response()->json(['message' => env("MESSAGE_SUCCESS")], 200);
+    }
+
+    public function login(LoginRequest $request)
+    {
+        $request->validated();
+
+        $user = $this->user::where('username', $request->get('username'))->first();
+        if (!$user)
+            return response()->json(['message' => 'Login yoki Parol noto\'g\'ri'], 400);
+        if (!$this->hash::check($request->get('password'), $user->password))
+            return response()->json(['message' => 'Login yoki Parol noto\'g\'ri'], 400);
+
+        $token = $user->createToken(env('APP_NAME'))->accessToken;
+        return ['token' => $token];
+    }
+
+    public function authUser()
+    {
+        return $this->auth::user();
     }
 }

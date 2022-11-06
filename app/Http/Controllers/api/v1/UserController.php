@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
 use App\Interfaces\UserInterface;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+/**
+ * @group User
+ */
 class UserController extends Controller implements UserInterface
 {
     public function __construct(private UserInterface $userRepository)
@@ -53,5 +57,21 @@ class UserController extends Controller implements UserInterface
     public function changeActive(User $user)
     {
         return $this->userRepository->changeActive($user);
+    }
+
+    /**
+     * @group A_Token
+     * Token olish
+     * @bodyParam username string required Example: admin23
+     * @bodyParam password string required Example: admin23
+     */
+    public function login(LoginRequest $request)
+    {
+        return $this->userRepository->login($request);
+    }
+
+    public function authUser()
+    {
+        return $this->userRepository->authUser();
     }
 }

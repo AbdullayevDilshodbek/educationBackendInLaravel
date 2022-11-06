@@ -1,1 +1,0 @@
-GroupToStudent Controllerdagi update rule ga qarab ishlash,yani admin bo'lsa all time else shu kunning o'zida.

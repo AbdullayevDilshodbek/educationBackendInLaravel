@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PositionRequest;
 use App\Interfaces\PositionInterface;
 
+/**
+ * @group Position
+ */
 class PositionController extends Controller implements PositionInterface
 {
     public function __construct(private PositionInterface $positionRepository)

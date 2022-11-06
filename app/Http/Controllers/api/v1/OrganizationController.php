@@ -8,6 +8,9 @@ use App\Interfaces\OrganizationInterface;
 use App\Models\Organization;
 use Illuminate\Http\Request;
 
+/**
+ * @group Organization
+ */
 class OrganizationController extends Controller implements OrganizationInterface
 {
 
