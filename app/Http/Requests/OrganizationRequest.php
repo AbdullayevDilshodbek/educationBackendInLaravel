@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class OrganizationRequest extends FormRequest
 {
@@ -24,7 +25,13 @@ class OrganizationRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:organizations'
+            'title' => [
+                'required',
+                Rule::unique('organizations')->where(function ($q) {
+                    $q->where('title', $this->title)
+                    ->where('id', '!=', $this->id);
+                })
+            ]
         ];
     }
 

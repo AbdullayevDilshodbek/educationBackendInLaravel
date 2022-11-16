@@ -20,6 +20,7 @@ Route::post('get_token', [UserController::class, 'login']);
 Route::middleware('auth:api')->group(function(){
     Route::apiResource('organizations', OrganizationController::class);
     Route::put('organization/change_active/{id}', [OrganizationController::class, 'changeActive']);
+    Route::get('organization/for_auto_complete', [OrganizationController::class, 'getAllForAutoComplete']);
 
     Route::apiResource('positions', PositionController::class);
     Route::put('position/change_active/{id}', [PositionController::class, 'changeActive']);

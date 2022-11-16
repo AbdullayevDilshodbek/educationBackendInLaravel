@@ -44,9 +44,9 @@ class OrganizationController extends Controller implements OrganizationInterface
      * @bodyParam title string required Tashkilot nomi
      * @bodyParam parent_id integer yuqori tashkilot
      */
-    public function update(OrganizationRequest $request, Organization $organization)
+    public function update(OrganizationRequest $request, int $id)
     {
-        return $this->organizationRepository->update($request, $organization);
+        return $this->organizationRepository->update($request, $id);
     }
 
     /**

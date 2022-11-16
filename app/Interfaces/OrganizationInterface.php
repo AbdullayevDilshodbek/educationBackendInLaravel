@@ -9,7 +9,7 @@ interface OrganizationInterface
 {
     public function index();
     public function store(OrganizationRequest $request);
-    public function update(OrganizationRequest $request, Organization $organization);
+    public function update(OrganizationRequest $request, int $id);
     public function changeActive(int $id);
     public function getAllForAutoComplete();
 }

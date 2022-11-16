@@ -17,6 +17,6 @@ class Organization extends Model
 
     public function parent()
     {
-        return $this->hasMany(Organization::class, 'id', 'parent_id');
+        return $this->hasOne(Organization::class, 'id', 'parent_id');
     }
 }
