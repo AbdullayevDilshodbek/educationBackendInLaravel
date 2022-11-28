@@ -17,8 +17,10 @@ class PositionRepository implements PositionInterface
     public function index()
     {
         $search = request('search' ,'');
-        $positions = $this->position::where('organization_id', $this->auth::user()->organization_id)
+        $positions = $this->position::with(['organization'])
+            ->where('organization_id', $this->auth::user()->position->organization->id)
             ->where('title', 'like', "%$search%")
+            ->orderByDesc('id')
             ->paginate(env('PG'));
         return PositionResource::collection($positions);
     }
@@ -27,7 +29,7 @@ class PositionRepository implements PositionInterface
     {
         $this->position::create([
             'title' => $request->title,
-            'organization_id' => $this->auth::user()->organization_id
+            'organization_id' => $this->auth::user()->position->organization->id
         ]);
         return response()->json(['message' => env('MESSAGE_SUCCESS')], 201);
     }
@@ -52,7 +54,7 @@ class PositionRepository implements PositionInterface
 
     public function getAllForAutoComplete()
     {
-        return $this->position::where('organization_id', $this->auth::user()->organization_id)
-            ->get();
+        return ['data' => $this->position::where('organization_id', $this->auth::user()->position->organization->id)
+            ->get(['id', 'title'])];
     }
 }

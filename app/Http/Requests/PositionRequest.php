@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PositionRequest extends FormRequest
 {
@@ -24,14 +25,17 @@ class PositionRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required'
+            'title' => ['required', Rule::unique('positions')->where(function($query){
+                $query->where('title', $this->title)->where('id', '!=', $this->id);
+            })]
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required' => 'Lavozim nomi kiritilmadi'
+            'title.required' => 'Lavozim nomi kiritilmadi',
+            'title.unique' => 'Lavozim allaqachon mavjud'
         ];
     }
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->foreignId('position_id')->constrained();
-            $table->foreignId('organization_id')->constrained();
+            $table->string('picture_name')->nullable();
             $table->boolean('active')->default(true);
             $table->rememberToken();
             $table->timestamps();

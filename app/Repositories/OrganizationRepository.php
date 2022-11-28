@@ -25,7 +25,7 @@ class OrganizationRepository extends Repository implements OrganizationInterface
             })
             ->where('title', 'like', "%$search%")
             ->orderByDesc('id')
-            ->paginate(1);
+            ->paginate(env('PG'));
         return OrganizationResource::collection($organizations);
     }
 

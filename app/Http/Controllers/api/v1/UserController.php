@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Interfaces\UserInterface;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,6 +31,7 @@ class UserController extends Controller implements UserInterface
     /**
      * Yangi foydalanuvchi qo'shish
      * @authenticated
+     * @bodyParam image file user_image
      */
     public function store(UserRequest $request)
     {
@@ -44,7 +46,7 @@ class UserController extends Controller implements UserInterface
      * @bodyParam password string Parol
      * @bodyParam position_id integer required Lavozim id
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
         return $this->userRepository->update($request, $user);
     }

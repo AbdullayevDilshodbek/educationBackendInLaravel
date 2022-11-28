@@ -27,6 +27,6 @@ Route::middleware('auth:api')->group(function(){
     Route::get('position/for_auto_complete', [PositionController::class, 'getAllForAutoComplete']);
 
     Route::apiResource('users', UserController::class);
-    Route::put('user/change_active/{id}', [UserController::class, 'changeActive']);
+    Route::put('user/change_active/{user}', [UserController::class, 'changeActive']);
     Route::get('auth_user', [UserController::class, 'authUser']);
 });

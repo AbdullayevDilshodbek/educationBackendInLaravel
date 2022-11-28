@@ -20,7 +20,6 @@ class UserSeeder extends Seeder
             'full_name' => 'Test User',
             'username' => 'admin',
             'password' => bcrypt('admin'),
-            'organization_id' => Organization::get()->skip(0)->take(1)->last()->id,
             'position_id' => 1
         ]);
     }
