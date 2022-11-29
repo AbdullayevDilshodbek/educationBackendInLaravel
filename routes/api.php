@@ -29,4 +29,5 @@ Route::middleware('auth:api')->group(function(){
     Route::apiResource('users', UserController::class);
     Route::put('user/change_active/{user}', [UserController::class, 'changeActive']);
     Route::get('auth_user', [UserController::class, 'authUser']);
+    Route::post('user/upload_image', [UserController::class, 'uploadImage']);
 });

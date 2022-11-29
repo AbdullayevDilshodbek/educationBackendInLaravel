@@ -8,11 +8,14 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Interfaces\UserInterface;
 use App\Models\User;
+use App\Services\FileUploadService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository implements UserInterface
 {
+    use FileUploadService;
     public function __construct(private User $user, private Auth $auth, private Hash $hash)
     {
     }
@@ -80,5 +83,15 @@ class UserRepository implements UserInterface
     public function authUser()
     {
         return $this->auth::user();
+    }
+
+    public function uploadImage(Request $request){
+        $res = $this->uploadImage_($request, 'storage/Images/Users');
+        if($res['error'])
+            return $res;
+        $this->user::find(auth()->id())->update([
+            'picture_name' => $res['filename']
+        ]);
+        return response()->json(['message' => 'Amalyot bajarildi'], 200);
     }
 }

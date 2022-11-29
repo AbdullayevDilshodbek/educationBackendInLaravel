@@ -76,4 +76,12 @@ class UserController extends Controller implements UserInterface
     {
         return $this->userRepository->authUser();
     }
+
+    /**
+     *
+     */
+    public function uploadImage(Request $request)
+    {
+        return $this->userRepository->uploadImage($request);
+    }
 }
