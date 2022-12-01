@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\api\v1\OrganizationController;
-use App\Http\Controllers\api\v1\PositionController;
 use App\Http\Controllers\api\v1\UserController;
+use App\Http\Routes\OrganizationRouter;
+use App\Http\Routes\PositionRouter;
+use App\Http\Routes\SubjectRouter;
+use App\Http\Routes\UserRouter;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +19,9 @@ use App\Http\Controllers\api\v1\UserController;
 */
 
 Route::post('get_token', [UserController::class, 'login']);
-Route::middleware('auth:api')->group(function(){
-    Route::apiResource('organizations', OrganizationController::class);
-    Route::put('organization/change_active/{id}', [OrganizationController::class, 'changeActive']);
-    Route::get('organization/for_auto_complete', [OrganizationController::class, 'getAllForAutoComplete']);
-
-    Route::apiResource('positions', PositionController::class);
-    Route::put('position/change_active/{id}', [PositionController::class, 'changeActive']);
-    Route::get('position/for_auto_complete', [PositionController::class, 'getAllForAutoComplete']);
-
-    Route::apiResource('users', UserController::class);
-    Route::put('user/change_active/{user}', [UserController::class, 'changeActive']);
-    Route::get('auth_user', [UserController::class, 'authUser']);
-    Route::post('user/upload_image', [UserController::class, 'uploadImage']);
+Route::group(['middleware' => 'auth:api'], function () {
+    OrganizationRouter::routes();
+    PositionRouter::routes();
+    UserRouter::routes();
+    SubjectRouter::routes();
 });

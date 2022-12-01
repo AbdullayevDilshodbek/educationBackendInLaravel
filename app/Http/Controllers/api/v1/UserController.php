@@ -78,7 +78,9 @@ class UserController extends Controller implements UserInterface
     }
 
     /**
-     *
+     * Auth ning account image ni serverga yuklash
+     * @authenticated
+     * @bodyParam file file
      */
     public function uploadImage(Request $request)
     {
