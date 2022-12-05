@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
             OrganizationSeeder::class,
             PositionSeeder::class,
             UserSeeder::class,
-            OauthClientSeeder::class
+            OauthClientSeeder::class,
+            RuleModelSeeder::class,
+            RuleSeeder::class,
+            UserHasRuleSeeder::class
         ]);
     }
 }

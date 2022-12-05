@@ -13,7 +13,6 @@ class PositionController extends Controller implements PositionInterface
 {
     public function __construct(private PositionInterface $positionRepository)
     {
-
     }
 
     /**
@@ -23,6 +22,8 @@ class PositionController extends Controller implements PositionInterface
      */
     public function index()
     {
+        if (!$this->authCan('show_positions'))
+            return $this->forbidden();
         return $this->positionRepository->index();
     }
 
@@ -33,6 +34,8 @@ class PositionController extends Controller implements PositionInterface
      */
     public function store(PositionRequest $request)
     {
+        if (!$this->authCan('add_positions'))
+            return $this->forbidden();
         return $this->positionRepository->store($request);
     }
 
@@ -45,6 +48,8 @@ class PositionController extends Controller implements PositionInterface
      */
     public function update(PositionRequest $request, $id)
     {
+        if (!$this->authCan('update_positions'))
+            return $this->forbidden();
         return $this->positionRepository->update($request, $id);
     }
 
@@ -55,6 +60,8 @@ class PositionController extends Controller implements PositionInterface
      */
     public function changeActive($id)
     {
+        if (!$this->authCan('update_positions'))
+            return $this->forbidden();
         return $this->positionRepository->changeActive($id);
     }
 

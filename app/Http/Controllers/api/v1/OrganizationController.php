@@ -24,6 +24,8 @@ class OrganizationController extends Controller implements OrganizationInterface
      */
     public function index()
     {
+        if (!$this->authCan('show_organizations'))
+            return $this->forbidden();
         return $this->organizationRepository->index();
     }
 
@@ -35,6 +37,8 @@ class OrganizationController extends Controller implements OrganizationInterface
      */
     public function store(OrganizationRequest $request)
     {
+        if (!$this->authCan('add_organizations'))
+            return $this->forbidden();
         return $this->organizationRepository->store($request);
     }
 
@@ -46,6 +50,8 @@ class OrganizationController extends Controller implements OrganizationInterface
      */
     public function update(OrganizationRequest $request, int $id)
     {
+        if (!$this->authCan('update_organizations'))
+            return $this->forbidden();
         return $this->organizationRepository->update($request, $id);
     }
 
@@ -55,6 +61,8 @@ class OrganizationController extends Controller implements OrganizationInterface
      */
     public function changeActive(int $id)
     {
+        if (!$this->authCan('update_organizations'))
+            return $this->forbidden();
         return $this->organizationRepository->changeActive($id);
     }
 

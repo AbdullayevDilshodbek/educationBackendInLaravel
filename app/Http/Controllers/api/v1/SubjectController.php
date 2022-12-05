@@ -16,7 +16,6 @@ class SubjectController extends Controller implements SubjectInterface
 {
     public function __construct(private SubjectInterface $subjectRepository)
     {
-
     }
 
     /**
@@ -26,6 +25,8 @@ class SubjectController extends Controller implements SubjectInterface
      */
     public function index()
     {
+        if (!$this->authCan('show_subjects'))
+            return $this->forbidden();
         return $this->subjectRepository->index();
     }
 
@@ -35,6 +36,8 @@ class SubjectController extends Controller implements SubjectInterface
      */
     public function store(SubjectCreateRequest $request)
     {
+        if (!$this->authCan('add_subjects'))
+            return $this->forbidden();
         return $this->subjectRepository->store($request);
     }
 
@@ -44,6 +47,8 @@ class SubjectController extends Controller implements SubjectInterface
      */
     public function update(SubjectUpdateRequest $request, Subject $subject)
     {
+        if (!$this->authCan('update_subjects'))
+            return $this->forbidden();
         return $this->subjectRepository->update($request, $subject);
     }
 
@@ -53,6 +58,8 @@ class SubjectController extends Controller implements SubjectInterface
      */
     public function changeActive(Subject $subject)
     {
+        if (!$this->authCan('update_subjects'))
+            return $this->forbidden();
         return $this->subjectRepository->changeActive($subject);
     }
 }

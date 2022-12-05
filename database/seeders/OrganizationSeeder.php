@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Organization;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class OrganizationSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class OrganizationSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('organizations')->truncate();
         Organization::create([
             'title' => 'Main',
             'active' => true

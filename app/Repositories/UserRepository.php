@@ -82,12 +82,19 @@ class UserRepository implements UserInterface
 
     public function authUser()
     {
-        return $this->auth::user();
+        $auth = $this->user::with(['user_has_rules.rule'])
+            ->find(auth()->id());
+        $auth['rules'] =  $auth->user_has_rules->map(function ($rules) {
+            return $rules->rule->key;
+        });
+        unset($auth->user_has_rules);
+        return $auth;
     }
 
-    public function uploadImage(Request $request){
+    public function uploadImage(Request $request)
+    {
         $res = $this->uploadImage_($request, 'storage/Images/Users');
-        if($res['error'])
+        if ($res['error'])
             return $res;
         $this->user::find(auth()->id())->update([
             'picture_name' => $res['filename']

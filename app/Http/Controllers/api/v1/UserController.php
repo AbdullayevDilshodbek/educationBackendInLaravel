@@ -25,6 +25,8 @@ class UserController extends Controller implements UserInterface
      */
     public function index()
     {
+        if (!$this->authCan('show_users'))
+            return $this->forbidden();
         return $this->userRepository->index();
     }
 
@@ -35,6 +37,8 @@ class UserController extends Controller implements UserInterface
      */
     public function store(UserRequest $request)
     {
+        if (!$this->authCan('add_users'))
+            return $this->forbidden();
         return $this->userRepository->store($request);
     }
 
@@ -48,6 +52,8 @@ class UserController extends Controller implements UserInterface
      */
     public function update(UserUpdateRequest $request, User $user)
     {
+        if (!$this->authCan('update_users'))
+            return $this->forbidden();
         return $this->userRepository->update($request, $user);
     }
 
@@ -58,6 +64,8 @@ class UserController extends Controller implements UserInterface
      */
     public function changeActive(User $user)
     {
+        if (!$this->authCan('update_users'))
+            return $this->forbidden();
         return $this->userRepository->changeActive($user);
     }
 

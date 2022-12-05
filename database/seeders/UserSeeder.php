@@ -6,6 +6,7 @@ use App\Models\Organization;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
@@ -16,10 +17,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->truncate();
         User::create([
             'full_name' => 'Test User',
-            'username' => 'admin',
-            'password' => bcrypt('admin'),
+            'username' => 'admin123',
+            'password' => bcrypt('test123'),
             'position_id' => 1
         ]);
     }

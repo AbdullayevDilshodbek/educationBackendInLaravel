@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Position::class, 'id', 'position_id');
     }
+
+    public function user_has_rules()
+    {
+        return $this->hasMany(UserHasRule::class, 'user_id', 'id');
+    }
 }
