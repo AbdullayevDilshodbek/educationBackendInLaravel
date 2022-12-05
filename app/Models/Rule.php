@@ -12,6 +12,7 @@ class Rule extends Model
     protected $fillable = [
         'title',
         'action',
+        'key',
         'rule_model_id'
     ];
 }

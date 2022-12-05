@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\v1\UserController;
 use App\Http\Routes\OrganizationRouter;
 use App\Http\Routes\PositionRouter;
+use App\Http\Routes\RuleRouter;
 use App\Http\Routes\SubjectRouter;
 use App\Http\Routes\UserRouter;
 
@@ -24,4 +25,5 @@ Route::group(['middleware' => 'auth:api'], function () {
     PositionRouter::routes();
     UserRouter::routes();
     SubjectRouter::routes();
+    RuleRouter::routes();
 });
