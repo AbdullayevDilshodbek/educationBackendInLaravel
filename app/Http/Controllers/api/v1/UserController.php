@@ -72,8 +72,8 @@ class UserController extends Controller implements UserInterface
     /**
      * @group A_Token
      * Token olish
-     * @bodyParam username string required Example: admin23
-     * @bodyParam password string required Example: admin23
+     * @bodyParam username string required Example: admin123
+     * @bodyParam password string required Example: admin123
      */
     public function login(LoginRequest $request)
     {

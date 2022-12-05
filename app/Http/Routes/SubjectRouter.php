@@ -10,6 +10,6 @@ class SubjectRouter
     public static function routes()
     {
         Route::apiResource('subjects', SubjectController::class);
-        Route::put('subject/change_active/{subject}');
+        Route::put('subject/change_active/{subject}', [SubjectController::class, 'changeActive']);
     }
 }

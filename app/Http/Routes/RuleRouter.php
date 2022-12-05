@@ -11,6 +11,6 @@ class RuleRouter
     public static function routes()
     {
         Route::apiResource('rule_models', RuleModelController::class);
-        Route::apiResource('rules/', RuleController::class);
+        Route::apiResource('rules', RuleController::class);
     }
 }

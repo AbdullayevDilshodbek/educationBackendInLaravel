@@ -69,7 +69,6 @@ class UserRepository implements UserInterface
     public function login(LoginRequest $request)
     {
         $request->validated();
-
         $user = $this->user::where('username', $request->get('username'))->first();
         if (!$user)
             return response()->json(['message' => 'Login yoki Parol noto\'g\'ri'], 400);

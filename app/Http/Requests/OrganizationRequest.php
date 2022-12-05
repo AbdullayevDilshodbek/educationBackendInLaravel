@@ -29,7 +29,8 @@ class OrganizationRequest extends FormRequest
                 'required',
                 Rule::unique('organizations')->where(function ($q) {
                     $q->where('title', $this->title)
-                    ->where('id', '!=', $this->id);
+                    ->where('id', '!=', $this->id)
+                    ;
                 })
             ]
         ];
