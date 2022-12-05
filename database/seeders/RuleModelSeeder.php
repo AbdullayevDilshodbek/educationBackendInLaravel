@@ -15,7 +15,7 @@ class RuleModelSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('rule_models')->truncate();
+        DB::table('rule_models')->delete();
         $dateTime = date('Y-m-d H:i:s');
         $array = array(
             [

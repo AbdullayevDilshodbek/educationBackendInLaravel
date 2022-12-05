@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->truncate();
+        DB::table('users')->delete();
         User::create([
             'full_name' => 'Test User',
             'username' => 'admin123',
