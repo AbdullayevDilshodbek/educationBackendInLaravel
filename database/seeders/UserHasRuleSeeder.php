@@ -14,7 +14,7 @@ class UserHasRuleSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('user_has_rules')->truncate();
+        DB::table('user_has_rules')->truncate();
         $dateTime = date('Y-m-d H:i:s');
         $array = [];
         for($i = 1; $i <= 9; $i++){
