@@ -17,7 +17,7 @@ class PositionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('positions')->truncate();
+        // DB::table('positions')->truncate();
         Position::create([
             'title' => 'admin',
             'organization_id' => Organization::first()->id,

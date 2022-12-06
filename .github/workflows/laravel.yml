@@ -36,8 +36,10 @@ jobs:
         php artisan key:generate
     - name: Migrate
       run: php artisan migrate
-    # - name: Seed
-    #   run: php artisan db:seed
+    - name: Seed
+      run: php artisan db:seed
+    - name: Make key
+      run: php artisan key:generate
     - name: Passport install
       run: php artisan passport:install
     - name: Composer reload
