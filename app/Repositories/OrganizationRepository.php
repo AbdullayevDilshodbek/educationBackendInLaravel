@@ -53,7 +53,10 @@ class OrganizationRepository extends Repository implements OrganizationInterface
         $organization = $this->organization::find($id);
         $organization->active = !$organization->active;
         $organization->save();
-        return response()->json(['message' => $this->message['ok']], 200);
+        return response()->json([
+            'message' => $this->message['ok'],
+            'data' => $organization
+        ], 200);
     }
 
     public function getAllForAutoComplete()
